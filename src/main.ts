@@ -5,6 +5,10 @@ import environment from './environment';
 import {PLATFORM} from 'aurelia-pal';
 import * as Bluebird from 'bluebird';
 
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+import { store as reduxStore } from './store/redux-store/store';
+
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
@@ -27,6 +31,8 @@ export function configure(aurelia: Aurelia) {
   if (environment.testing) {
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
   }
+
+  aurelia.container.registerInstance('ReduxStore', reduxStore);
 
   aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }

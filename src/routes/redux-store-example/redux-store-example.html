@@ -1,0 +1,58 @@
+<template>
+  <div class="container">
+    <h1>Redux Store Example</h1>
+    <div class="row">
+      <div class="col-sm">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr repeat.for="entity of state.entities">
+              <td>${entity.id}</td>
+              <td>${entity.name}</td>
+              <td class="text-right">
+                <button class="btn" click.delegate="viewDetails(entity.id)">View details</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm">
+        <div if.bind="selectedEntity != null" class="card">
+          <div class="card-header">
+            Details
+          </div>
+          <div if.bind="!state.editEntity">
+            <div class="card-body">
+              <h5 class="card-title">${selectedEntity.name}</h5>
+            </div>
+            <div class="card-footer text-right">
+              <button class="btn" click.delegate="editDetails()">Edit details</button>
+            </div>
+          </div>
+          <div if.bind="state.editEntity">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" value.bind="selectedEntity.name" disabled.bind="state.isProcessing">
+              </div>
+              <div if.bind="state.isProcessing" class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="card-footer text-right">
+              <button class="btn btn-danger" click.delegate="cancelEditDetails()" disabled.bind="state.isProcessing">Cancel</button>
+              <button class="btn btn-success" click.delegate="saveDetails(selectedEntity)" disabled.bind="state.isProcessing">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

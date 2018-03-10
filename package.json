@@ -8,10 +8,15 @@
   },
   "license": "MIT",
   "dependencies": {
-    "aurelia-bootstrapper": "^2.1.1",
     "aurelia-animator-css": "^1.0.2",
+    "aurelia-bootstrapper": "^2.1.1",
+    "aurelia-dialog": "^1.0.0-rc.2.0.0",
+    "aurelia-polyfills": "latest",
     "bluebird": "^3.4.1",
-    "aurelia-polyfills": "latest"
+    "bootstrap": "^4.0.0",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0"
   },
   "peerDependencies": {},
   "devDependencies": {
