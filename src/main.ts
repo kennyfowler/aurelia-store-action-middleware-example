@@ -9,6 +9,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 import { store as reduxStore } from './store/redux-store/store';
 
+import { State, initialState } from './store/common/state';
+
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
@@ -16,6 +18,8 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature(PLATFORM.moduleName('resources/index'));
+
+  aurelia.use.plugin(PLATFORM.moduleName('aurelia-store'), { initialState });
 
   // Uncomment the line below to enable animation.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));

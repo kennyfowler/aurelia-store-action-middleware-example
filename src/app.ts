@@ -16,13 +16,13 @@ export class App {
         nav: true,
         title: 'Redux Store Example'
       },
-      // {
-      //   route: ['aurelia-store-example'],
-      //   name: 'aurelia-store-example',
-      //   moduleId: PLATFORM.moduleName('./routes/aurelia-store-example/aurelia-store-example'),
-      //   nav: true,
-      //   title: 'Aurelia Store Example'
-      // }
+      {
+        route: ['aurelia-store-example'],
+        name: 'aurelia-store-example',
+        moduleId: PLATFORM.moduleName('./routes/aurelia-store-example/aurelia-store-example'),
+        nav: true,
+        title: 'Aurelia Store Example'
+      }
     ]);
 	}
 }

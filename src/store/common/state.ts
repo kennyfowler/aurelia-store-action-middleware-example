@@ -8,6 +8,7 @@ export interface State {
   entities: Array<any>;
   selectedEntityId: number;
   editEntity: boolean;
+  currentAction: string; // used for aurelia store middleware
 }
 
 export const initialState: State = {
@@ -25,5 +26,6 @@ export const initialState: State = {
     }
   ],
   selectedEntityId: null,
-  editEntity: false
+  editEntity: false,
+  currentAction: null
 }
