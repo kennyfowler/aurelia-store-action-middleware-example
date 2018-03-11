@@ -7,20 +7,20 @@ export enum Types {
   SAVE_DETAILS_ERROR = 'SAVE_DETAILS_ERROR',
 }
 
-export const viewDetails = (id: number) => async (dispatch, getState, container) => {
+export const viewDetails = (id: number) => (dispatch, getState, container) => {
   dispatch({
     type: Types.VIEW_DETAILS,
     id: id
   });
 }
 
-export const editDetails = () => async (dispatch, getState, container) => {
+export const editDetails = () => (dispatch, getState, container) => {
   dispatch({
     type: Types.EDIT_DETAILS
   });
 }
 
-export const cancelEditDetails = () => async (dispatch, getState, container) => {
+export const cancelEditDetails = () => (dispatch, getState, container) => {
   dispatch({
     type: Types.CANCEL_EDIT_DETAILS
   });
