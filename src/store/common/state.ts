@@ -4,6 +4,7 @@ export interface State {
   actionLock: {
     allowedActions: Array<string>;
     message: string;
+    releaseActions?: Array<string>;
   },
   entities: Array<any>;
   selectedEntityId: number;

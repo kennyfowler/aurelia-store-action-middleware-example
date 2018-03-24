@@ -12,7 +12,7 @@
     "aurelia-bootstrapper": "^2.1.1",
     "aurelia-dialog": "^1.0.0-rc.2.0.0",
     "aurelia-polyfills": "latest",
-    "aurelia-store": "^0.19.2",
+    "aurelia-store": "git://github.com/zewa666/aurelia-store.git#middleware-action",
     "bluebird": "^3.4.1",
     "bootstrap": "^4.0.0",
     "redux": "^3.7.2",
